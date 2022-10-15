@@ -1,60 +1,38 @@
 {
-  "name": "cypress-workshop",
-  "version": "0.0.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/basarat/cypress-workshop.git"
-  },
+  "name": "demo-talk",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "clean": "rm -rf ./node_modules package-lock.json && npm install",
-    "start:server": "ts-node-dev --project tsconfig.server.json src/server/server.ts",
-    "start:app": "react-scripts -r @cypress/instrument-cra start",
     "start:cypress": "cypress open",
-    "start": "concurrently npm:start:server npm:start:app npm:start:cypress",
-    "build:check": "tsc -p .",
-    "build:server": "tsc -p ./tsconfig.server.json",
-    "build:app": "react-scripts build",
-    "build:cypress:start": "concurrently -k \"node lib/server/server.js\" \"serve build -l 3000\"",
-    "build:cypress:test": "cypress run --browser chrome --headless",
-    "build:cypress": "start-server-and-test build:cypress:start http://localhost:3000 build:cypress:test",
-    "build": "npm run build:check && npm run build:server && npm run build:app && npm run build:cypress"
+    "start:app": "next dev",
+    "start": "concurrently \"npm run start:app\" \"npm run start:cypress\"",
+    "headless:cypress": "cypress run",
+    "headless:app": "next build && next start",
+    "headless": "start-server-and-test headless:app http://localhost:3000 headless:cypress"
   },
   "dependencies": {
-    "@cypress/instrument-cra": "1.4.0",
-    "@types/cors": "2.8.12",
-    "@types/express": "4.17.14",
     "@types/lowdb": "1.0.11",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
-    "@types/uuid": "8.3.4",
     "axios": "1.1.2",
     "concurrently": "7.4.0",
-    "cors": "2.8.5",
-    "express": "4.18.2",
+    "cypress": "10.10.0",
     "lowdb": "3.0.0",
+    "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-scripts": "5.0.1",
-    "serve": "14.0.1",
     "start-server-and-test": "1.14.0",
     "takeme": "0.12.0",
-    "ts-node-dev": "2.0.0",
-    "typescript": "4.8.4",
     "typestyle": "2.4.0",
     "uuid": "9.0.0",
-    "valtio": "1.7.3"
+    "valtio": "https://pkg.csb.dev/pmndrs/valtio/commit/e709fe08/valtio"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/node": "18.11.0",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "@types/uuid": "^8.3.4",
+    "eslint": "8.25.0",
+    "eslint-config-next": "12.3.1",
+    "typescript": "4.8.4"
   }
 }

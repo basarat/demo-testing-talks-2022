@@ -16,9 +16,16 @@ npm i
 
 ## Run
 
+While Developing: 
+
 ```
 npm start
 ```
-See app running http://localhost:3000
+
+On Build Sytem: 
+
+```
+npm run headless
+```
 
 
