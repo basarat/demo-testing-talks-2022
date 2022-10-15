@@ -1,18 +1,24 @@
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCGD_0i6L48hucTiiyhb5QzQ?style=social)](https://www.youtube.com/@basarat)
+
+[![Follow on Twitter](https://img.shields.io/twitter/follow/basarat?style=social&logo=twitter)](https://twitter.com/basarat)
+
 # Cypress Workshop
-> [Subscribe on YouTube](https://www.youtube.com/basaratali) / [Follow on Twitter](https://twitter.com/basarat) 🌹.
+
+> `demo-*` are the repos I use for lessons 🌹.
+
+You hopefully came here after watching the talk ❤️. That said, feel free to play with this code even without watching the session (it will be released on YouTube at some point) 👏🏻 .
 
 ## Setup 
-Setup: 
 
 ```bash
-git clone https://github.com/basarat/cypress-workshop.git
-cd cypress-workshop
 npm i
 ```
 
-Open up code: 
-* code .
+## Run
 
-Open localhost:3000
-* open http://localhost:3000
+```
+npm start
+```
+See app running http://localhost:3000
+
 
