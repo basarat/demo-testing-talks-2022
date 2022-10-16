@@ -51,7 +51,7 @@ describe('Item', () => {
   it('Clicking the remove button should remove it item', () => {
     todoPage.addTodo('Hello World');
     todoPage.itemDestroyByIndex(0).invoke('show').click();
-    cy.get('Hello World').should('not.exist');
+    cy.contains('Hello World').should('not.exist');
   });
 });
 ```
