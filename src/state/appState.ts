@@ -6,6 +6,7 @@ import { useSnapshot } from 'valtio';
 
 function createAppProxy() {
   const result = proxyWithComputed({
+    router: routerProxy,
     items: [] as TodoItem[],
     current: '',
     setCurrent: (value: string) => {
@@ -82,9 +83,9 @@ function createAppProxy() {
       return snap.items.filter(i => i.completed).length;
     },
     visibleList(snap) {
-      return routerProxy.route === 'all'
+      return snap.router.route === 'all'
         ? snap.items
-        : routerProxy.route === 'active'
+        : snap.router.route === 'active'
           ? snap.items.filter(i => i.completed === false)
           : snap.items.filter(i => i.completed === true)
     },

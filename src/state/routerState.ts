@@ -25,10 +25,6 @@ const createRouterProxy = () => {
 
 export const routerProxy = createRouterProxy();
 
-export function useRouterSnapshot() {
-  return useSnapshot(routerProxy);
-}
-
 new Router([
   {
     $: routes.active,

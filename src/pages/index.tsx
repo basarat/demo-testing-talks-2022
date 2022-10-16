@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { classNames } from '../components/todomvc/css';
 import { useAppSnapshot } from '../state/appState';
-import { routes, link, useRouterSnapshot, } from '../state/routerState';
+import { routes, link } from '../state/routerState';
 
 export const Home = () => {
   const appSnap = useAppSnapshot();
@@ -114,8 +114,8 @@ export const Main: React.FC<{}> = (() => {
 });
 
 export const Footer: React.FC<{}> = (() => {
-  const routerSnap = useRouterSnapshot();
   const appSnap = useAppSnapshot();
+  const routerSnap = appSnap.router;
   return (
     <footer className={classNames.footer}>
       <span className={classNames.todoCount}><strong>{appSnap.activeCount}</strong> {appSnap.activeCount === 1 ? 'item' : 'items'} left</span>
