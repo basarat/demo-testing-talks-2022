@@ -109,6 +109,8 @@ describe('Edit item', () => {
 describe('Toggle all', () => {
   it('Should not be visible when there are no todos', () => {
     todoPage.toggleAllCheckbox.should('not.exist');
+    todoPage.addTodo('Hello');
+    todoPage.toggleAllCheckbox.should('exist');
   });
   it('If any todo is not complete it should not be checked.', () => {
     todoPage.addTodo('Hello');
